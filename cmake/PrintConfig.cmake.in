@@ -1,0 +1,4 @@
+@PACKAGE_INIT@
+set_and_check(PRINT_LIB_DIR "@PACKAGE_LIB_INSTALL_DIR@")
+include("${PRINT_LIB_DIR}/cmake/PrintTarget.cmake")
+check_required_components(Print)
