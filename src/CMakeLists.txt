@@ -1,3 +1,5 @@
+include(GNUInstallDirs)
+
 # Targets
 set(TARGET_LIB_OBJ ${PROJECT_NAME}_obj)
 add_library(${TARGET_LIB_OBJ} OBJECT
@@ -39,8 +41,6 @@ add_library(${TARGET_LIB_STATIC} STATIC $<TARGET_OBJECTS:${TARGET_LIB_OBJ}>)
 set_target_properties(${TARGET_LIB_STATIC} PROPERTIES OUTPUT_NAME Print)
 
 # INSTALLATION
-include(GNUInstallDirs)
-
 ## Install target artifacts (library) and headers (fileset)
 ## also create named export (used from install and export)
 install(TARGETS ${TARGET_LIB_SHARED} ${TARGET_LIB_STATIC} ${TARGET_LIB_OBJ} EXPORT PrintTarget
