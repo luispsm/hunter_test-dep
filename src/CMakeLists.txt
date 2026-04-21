@@ -43,7 +43,7 @@ include(GNUInstallDirs)
 
 ## Install target artifacts (library) and headers (fileset)
 ## also create named export (used from install and export)
-install(TARGETS ${TARGET_LIB_SHARED} ${TARGET_LIB_STATIC} EXPORT PrintTarget
+install(TARGETS ${TARGET_LIB_SHARED} ${TARGET_LIB_STATIC} ${TARGET_LIB_OBJ} EXPORT PrintTarget
 	ARCHIVE
 		COMPONENT libraries
 		DESTINATION ${CMAKE_INSTALL_LIBDIR}/print
