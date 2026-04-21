@@ -25,13 +25,13 @@ function(generate_version_header target_name)
 
 
     target_include_directories(${target_name} 
-        PUBLIC 
+        PRIVATE
             $<BUILD_INTERFACE:${version_file_path_base}>
             $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
     )
 
-    install(FILES
-        ${version_file_path_base}/${GENERATE_VERSION_HEADER_PROJECT_NAME}/version.h
-        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/print/
-    )
+    # install(FILES
+    #     ${version_file_path_base}/${GENERATE_VERSION_HEADER_PROJECT_NAME}/version.h
+    #     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/print/
+    # )
 endfunction()

@@ -4,5 +4,6 @@
 
 namespace lps::print {
 	void print_test(std::string_view str);
-	//TEST LPS
+	void print_version();
+	void print_commit_id();
 }

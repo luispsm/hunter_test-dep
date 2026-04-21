@@ -42,8 +42,12 @@ target_link_libraries(${TARGET_LIB_SHARED}
 )
 
 set(TARGET_LIB_STATIC ${PROJECT_NAME}_static)
-add_library(${TARGET_LIB_STATIC} STATIC $<TARGET_OBJECTS:${TARGET_LIB_OBJ}>)
+# add_library(${TARGET_LIB_STATIC} STATIC $<TARGET_OBJECTS:${TARGET_LIB_OBJ}>)
+add_library(${TARGET_LIB_STATIC} STATIC)
 set_target_properties(${TARGET_LIB_STATIC} PROPERTIES OUTPUT_NAME Print)
+target_link_libraries(${TARGET_LIB_STATIC}
+	PUBLIC ${TARGET_LIB_OBJ}
+)
 
 # INSTALLATION
 ## Install target artifacts (library) and headers (fileset)
