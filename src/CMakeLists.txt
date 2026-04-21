@@ -34,7 +34,12 @@ target_sources(${TARGET_LIB_OBJ}
 )
 
 set(TARGET_LIB_SHARED ${PROJECT_NAME})
-add_library(${TARGET_LIB_SHARED} SHARED $<TARGET_OBJECTS:${TARGET_LIB_OBJ}>)
+# Target properties (include directories) aren't being propagated to dependent targets
+# add_library(${TARGET_LIB_SHARED} SHARED $<TARGET_OBJECTS:${TARGET_LIB_OBJ}>)
+add_library(${TARGET_LIB_SHARED} SHARED)
+target_link_libraries(${TARGET_LIB_SHARED}
+	PUBLIC ${TARGET_LIB_OBJ}
+)
 
 set(TARGET_LIB_STATIC ${PROJECT_NAME}_static)
 add_library(${TARGET_LIB_STATIC} STATIC $<TARGET_OBJECTS:${TARGET_LIB_OBJ}>)
