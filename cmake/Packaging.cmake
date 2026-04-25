@@ -2,7 +2,7 @@
 set(CPACK_PACKAGE_NAME "Print")
 set(CPACK_PACKAGE_VERSION "0.0.1")
 set(CPACK_PACKAGE_VENDOR "LPS")
-set(CPACK_PACKAGE_CONTACT "lpsdevel14@example.com")
+set(CPACK_PACKAGE_CONTACT "bar@foo.com")
 set(CPACK_PACKAGE_DESCRIPTION "Simple print project")
 
 # binary package
