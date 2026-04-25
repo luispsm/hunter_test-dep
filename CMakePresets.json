@@ -1,0 +1,49 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 26,
+        "patch": 0
+    },
+    "include": [],
+    "configurePresets": [
+        {
+            "name": "config-base",
+            "hidden": true,
+            "displayName": "base Configuration",
+            "description": "Default build using make generator",
+            "generator": "Unix Makefiles",
+            "binaryDir": "${sourceDir}/_build/${presetName}",
+            "toolchainFile": "${sourceDir}/arm-none-eabi-gcc.cmake"
+        },
+        {
+            "name": "debug",
+            "displayName": "Config Debug",
+            "description": "Sets debug build type and cortex arch",
+            "inherits": "config-base",
+            "architecture": {
+                "value": "arm",
+                "strategy": "external"
+            },
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "release",
+            "displayName": "Config Release",
+            "description": "Sets release build type",
+            "inherits": "debug",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        }
+    ],
+    "buildPresets": [],
+    "testPresets": [],
+    "packagePresets": [],
+    "workflowPresets": [],
+    "vendor": {
+        "data": "IDE-specific information"
+    }
+}
